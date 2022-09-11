@@ -22,9 +22,9 @@ export class ImagesController {
     return this.imagesService.findImagesByCategory(id);
   }
 
-  @Get(':id')
+  @Get('oneImage/:id')
   imagesByProduct(@Param('id', ParseIntPipe) id:number){
-    return this.imagesService.findImagesByProduct(id)
+    return this.imagesService.findImageByProduct(+id)
   }
 
   @Patch(':id')
